@@ -12,7 +12,7 @@ This is a simple bill calculator and divison app developed to demonstrate React.
 ![screenshot](https://github.com/pipe2442/react-basic-calculator/blob/fifth-milestone/src/Assets/reactWall.jpg)
 
 # Project Screen
-![screenshot](https://github.com/pipe2442/b-splitter/blob/feature/bill-splitter/src/styles/billsplitter.png)
+![screenshot](https://github.com/pipe2442/bsplit/blob/feature/bill-split/bill-split/src/styles/billsplitter.png)
 
 ## Getting Started
 To run a local copy of this application, follow the steps below:
