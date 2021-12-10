@@ -1,2 +1,2 @@
-# DEVELOP
+# React Bill Splitter
 
