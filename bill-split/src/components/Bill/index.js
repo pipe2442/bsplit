@@ -1,26 +1,41 @@
 import React, { useState } from 'react'
 import './styles.scss'
-import { addValues, findTax, equalDivision } from '../../logic/logic.js'
+import { addValues, findTax, equalDivision, usersPercentage } from '../../logic/logic.js'
 
 function Bill ({ bill }) {
-  const [percentage, setPercentage] = useState(0)
-  const [percentageArray, setPercentageArray] = useState([])
+
   const total = addValues(bill)
   const tax = findTax(bill, total)
+  const final = total + tax
   const equalParts = equalDivision(total, tax, bill)
+  const [users, setUsers] = useState([...usersPercentage(bill.users)])
+  const [perusers, setPerusers] = useState([])
 
-  const handlePercentageInput = (event) => {
-    setPercentage(event.target.value)
+  console.warn('usuarios', users)
+
+  const handleChangeInput = (index, event) => {
+    const values = [...users]
+    values[index][event.target.name] = event.target.value 
+    setUsers(values)
   }
-  const handlePercentageSubmission = (event) => {
-    event.preventDefault()
-    setPercentageArray([...percentageArray, percentage])
-    setPercentage('')
-    event.target.value = ''
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    setPerusers([...users])
+    setUsers([])
   }
+
   return (
     <div className='bill'>
       <h1 className='bill__title'>Restaurant Bill</h1>
+      {
+          perusers.map(u => (
+            <div>
+              <h2>{u.name}</h2>
+              <h2>{u.percentage}</h2>
+            </div>
+          ))
+      }
       <ul className='bill__menu'>
         {bill.menu.map((menu, idx) => (
           <li className='bill__item' key={idx}>
@@ -45,30 +60,30 @@ function Bill ({ bill }) {
         </div>
       </div>
       {bill.category === 'B' && (
-        <form className='bill__percentage'>
+        <form className='bill__percentage' onSubmit={handleSubmit}>
           <h2>Percentages:</h2>
           <h3>
             On this section you should add the percentage that each user wish to
             pay.
           </h3>
           <ul>
-            {bill.users.map((user, idx) => (
+            {users.map((user, idx) => (
               <li className='percentage__item' key={idx}>
-                <h3>Percentage for {user}</h3>
+                <h3>Percentage for {user.name}</h3>
                 <input
                   type='text'
                   placeholder='Add Percentage'
                   className='percentage__input'
-                  onChange={handlePercentageInput}
+                  onChange={event => handleChangeInput(idx, event)}
                   name='percentage'
-                  value={percentage}
                 />
-                <button onClick={handlePercentageSubmission} type='button' className='button'>
-                  Add Percentage
-                </button>
+                <h4>{user.name} pays {((user.percentage/100) * final).toFixed(0)}</h4>
               </li>
             ))}
           </ul>
+          <button onClick={handleSubmit} type='submit' className='button'>
+            Add Percentage
+          </button>
         </form>
       )}
       {bill.category === 'A' && (
