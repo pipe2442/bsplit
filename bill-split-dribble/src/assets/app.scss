@@ -1,0 +1,12 @@
+@import './styles/global.scss';
+
+.app {
+    display: flex;
+    &__menu{
+      flex-basis: 60%;
+    }
+    &__bill{
+      flex-basis: 40%;
+      background-color: yellowgreen;
+    }
+}

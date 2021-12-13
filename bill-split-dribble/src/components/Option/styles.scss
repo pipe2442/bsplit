@@ -1,0 +1,37 @@
+@import "../../assets/styles/global.scss";
+
+.option {
+  cursor: pointer;
+  margin: 25px 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: $white;
+  width: 70px;
+  height: 100px;
+  border: 1px solid $invisible-gray;
+  border-radius: 15px;
+  transition: 0.3s;
+  &:hover {
+    background-color: $yellow-hover;
+    .option__text {
+      background-color: $yellow-hover;
+      color: black;
+    }
+  }
+  .img-container {
+    padding: 10px 13px;
+    border-radius: 5%;
+    border: 1px solid $invisible-gray;
+    background-color: $white;
+    .option__image {
+      width: 27px;
+    }
+  }
+  &__text {
+    font-size:13px;
+    transition: 0.3s;
+    color: $text-gray;
+  }
+}

@@ -1,0 +1,31 @@
+@import "./fonts";
+@import "./variables";
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  background: $global-background-gray;
+  font-family: $font-200;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+/* for Opera,webkit chrome browsers */
+input::-webkit-input-placeholder {
+  color: $text-gray;
+}
+/*firefox 19+ versions*/
+input::-moz-placeholder {
+  color: $text-gray;
+}
+/*IE  versions*/
+input::-ms-placeholder {
+  color: $text-gray;
+}
+/*Latest modern browsers */
+
+input::placeholder {
+  color: $text-gray;
+}

@@ -1,0 +1,44 @@
+@import "../../assets/styles/global.scss";
+
+.card {
+    background-color: $white;
+    border-radius: 10px;
+    border: 1px solid $invisible-gray;
+    width: 150px;
+    margin: 10px;
+    text-align: center;
+    transition: 0.3s;
+    cursor: pointer;
+    &:hover {
+      background-color: $food-background;
+      .card__text {
+        background-color: $food-background;
+      }
+      .card__price {
+        background-color: $food-background;
+        color: black;
+      }
+    }
+    &__img {
+      width: 100px;
+      margin: 15px;
+      background-color: $food-background;
+      padding: 20px 0;
+      border-radius: 50%;
+    }
+    &__text {
+      font-weight: 400;
+      font-size: 15px;
+      margin: 5px 0;
+      background-color: $white;
+      transition: 0.3s;
+      // min-height: 55px;
+    }
+    &__price {
+      color: $text-gray;
+      margin-bottom: 15px;
+      background-color: $white;
+      transition: 0.3s;
+      font-size: 15px;
+    }
+}

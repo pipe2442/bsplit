@@ -1,0 +1,56 @@
+@import "../../assets/styles/global.scss";
+
+.billcard {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $white;
+  border-radius: 10px;
+  border: 1px solid $invisible-gray;
+  margin: 10px 0;
+
+  &__img {
+    width: 75px;
+    margin: 12px;
+    background-color: $food-background;
+    padding: 15px 0;
+    border-radius: 50%;
+  }
+  &__info {
+    background-color: $white;
+    .info__name{
+      background-color: $white;
+    }
+    .info__price{
+      background-color: $white;
+      color: $text-gray
+    }
+  }
+  &__quantity {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .quantity__icon{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      cursor: pointer;
+      padding: 0 7px;
+      width: 35px;
+      height: 35px;
+      border-radius: 50%;
+      border: 1px solid $invisible-gray;
+      margin: 10px;
+      transition: 0.3s;
+      &:hover {
+        color: $white;
+        background-color: $red;
+        border: none;
+      }
+    }
+  }
+  &__total {
+    color: $text-gray
+  }
+}
