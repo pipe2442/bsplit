@@ -25,3 +25,5 @@ export const deleteItem = (menu, index) => {
   }
 
   export const finalSum = (total, tax) => (Number(total) + Number(tax)).toFixed(2)
+
+  export const dishTotal = (price, quantity) => (price * quantity).toFixed(2)

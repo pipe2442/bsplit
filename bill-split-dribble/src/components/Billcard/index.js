@@ -1,9 +1,10 @@
 import React from 'react'
 import './styles.scss'
+import { dishTotal } from '../../logic/logic.js'
 
 function Billcard({ dish, idx, handleMenuChange }) {
-  const total = 0
   const { img, name, price, quantity } = dish
+  const total = dishTotal(price, quantity)
     return (
         <div className='billcard'>
           <img className="billcard__img" src={img} alt="Selected food image" />
