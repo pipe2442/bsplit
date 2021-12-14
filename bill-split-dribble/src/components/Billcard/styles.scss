@@ -2,6 +2,7 @@
 
 .billcard {
   display: flex;
+  padding: 5px;
   justify-content: center;
   align-items: center;
   background-color: $white;
@@ -52,6 +53,7 @@
     }
   }
   &__total {
-    color: $text-gray
+    color: $text-gray;
+    background-color: $white;
   }
 }
