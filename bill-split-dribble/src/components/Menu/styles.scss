@@ -9,4 +9,9 @@
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
+  &__element {
+    border: none;
+    margin: 0;
+    padding: 0;
+  }
 }

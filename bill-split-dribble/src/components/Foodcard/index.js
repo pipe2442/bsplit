@@ -1,7 +1,8 @@
 import React from 'react'
 import './styles.scss'
 
-function Foodcard({ img, name, price }) {
+function Foodcard({ dish }) {
+  const {img, name, price} = dish
     return (
         <>
           <div className='card'>

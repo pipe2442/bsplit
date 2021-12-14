@@ -1,9 +1,9 @@
 import React from 'react'
 import './styles.scss'
-import add from '../../assets/images/add.png'
-import minus from '../../assets/images/minus.png'
 
-function Billcard({img, name, price, quantity, total}) {
+function Billcard({ dish, handleMenuChange }) {
+  const total = 0
+  const { img, name, price, quantity } = dish
     return (
         <div className='billcard'>
           <img className="billcard__img" src={img} alt="Selected food image" />
@@ -12,9 +12,9 @@ function Billcard({img, name, price, quantity, total}) {
             <p className='info__price'>{price}</p>
           </div>
           <div className="billcard__quantity">
-            <button className='quantity__icon'>-</button>
+            <button onClick={() => handleMenuChange(dish, false)} className='quantity__icon'>-</button>
             <p>x{quantity}</p>
-            <button className='quantity__icon'>+</button>
+            <button onClick={() => handleMenuChange(dish)} className='quantity__icon'>+</button>
           </div>
           <p className="billcard__total">{total}</p>
         </div>
