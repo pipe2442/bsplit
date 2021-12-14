@@ -22,7 +22,7 @@ function App () {
           <Category />
           <Menu menu={menu} handleMenuChange={handleMenuChange} />
         </div>
-        <Bill className="app__bill" food={order} handleMenuChange={handleMenuChange} />
+        <Bill className="app__bill" order={order} handleMenuChange={handleMenuChange} />
       </div>
     </>
   )
