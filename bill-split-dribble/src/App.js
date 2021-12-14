@@ -8,10 +8,11 @@ import {menu} from './components/mockup'
 function App () {
   const [order, setOrder] = useState([])
 
-  const handleMenuChange = (newDish, add = true) => {
+  const handleMenuChange = (newDish, idx, add = true) => {
     let newArr = order.filter(element => element  !== newDish)
     add ? newDish.quantity += 1  : newDish.quantity -= 1 
-    setOrder([...newArr, newDish])
+    newArr.splice( idx, 0, newDish );
+    setOrder([...newArr])
   }
 
   return (

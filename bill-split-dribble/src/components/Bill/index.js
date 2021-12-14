@@ -1,8 +1,13 @@
 import React from 'react'
 import './styles.scss'
 import Billcard from '../Billcard'
+import { addValues, findTax, finalSum, usersPercentage } from '../../logic/logic.js'
 
 function Bill({ food, handleMenuChange }) {
+  const total = addValues(food)
+  const tip = 10
+  const tax = findTax(tip, total)
+  const final = finalSum(total, tax)
     return (
         <>
           <div className='bill'>
@@ -12,9 +17,9 @@ function Bill({ food, handleMenuChange }) {
 
             <div className="bill__menu">
               { 
-                food.map(dish => (
+                food.map((dish, idx) => (
                   dish.quantity > 0 &&
-                  <Billcard dish={dish} handleMenuChange={handleMenuChange} />
+                  <Billcard dish={dish} handleMenuChange={handleMenuChange} idx={idx} />
                 ))
               }
             </div>
@@ -22,15 +27,15 @@ function Bill({ food, handleMenuChange }) {
             <div className="bill__results">
               <div className="results__name">
                 <p>Sub total:</p>
-                <p>PB(5%):</p> 
+                <p>PB({tip}%):</p> 
               </div>
               <div className="results__amount">
-                <p>$22.40</p>
-                <p>$22.40</p>
+                <p>${total}</p>
+                <p>${tax}</p>
               </div>
             </div>
 
-            <button className='bill__submit' > Charge $23.52</button>
+            <button className='bill__submit' > Charge ${final}</button>
           </div>
         </>
     )
