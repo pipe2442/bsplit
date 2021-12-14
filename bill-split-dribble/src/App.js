@@ -1,11 +1,11 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import './assets/app.scss'
 import Category from "./components/Category"
 import Menu from "./components/Menu"
 import Bill from "./components/Bill"
-import {menu} from './components/mockup'
 
 function App () {
+  const [menu, setMenu] = useState([])
   const [order, setOrder] = useState([])
 
   const handleMenuChange = (newDish, idx, add = true) => {
@@ -14,6 +14,16 @@ function App () {
     newArr.splice( idx, 0, newDish );
     setOrder([...newArr])
   }
+
+  useEffect(() => {
+    const fetchData = async() => {
+      const response = await fetch('http://localhost:8000/menu')
+      const data = await response.json()
+      setMenu(data)
+      console.log(data)
+    }
+    fetchData()
+  }, [])
 
   return (
     <>
