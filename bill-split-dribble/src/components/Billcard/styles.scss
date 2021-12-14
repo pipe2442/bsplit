@@ -9,6 +9,10 @@
   border-radius: 10px;
   border: 1px solid $invisible-gray;
   margin: 10px 0;
+  @media #{$m-smallscreen} {
+    font-size: 80%;
+    padding: 5px 2px;
+  }
 
   &__img {
     width: 75px;
@@ -16,6 +20,9 @@
     background-color: $food-background;
     padding: 15px 0;
     border-radius: 50%;
+    @media #{$m-smallscreen} {
+      margin: 12px 0;
+    }
   }
   &__info {
     background-color: $white;
@@ -50,10 +57,17 @@
         color: $white;
         background-color: $red;
       }
+      @media #{$m-smallscreen} {
+        width: 70%;
+        height: 70%;
+      }
     }
   }
   &__total {
     color: $text-gray;
     background-color: $white;
+  }
+  @media #{$m-smallscreen} {
+    padding: 0 10px;
   }
 }

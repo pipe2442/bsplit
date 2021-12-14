@@ -6,3 +6,10 @@ $text-gray: #b0b0b2;
 $invisible-gray: #b0b0b224;
 $yellow-hover: #ffdb6d;
 $food-background: #fdf3db;
+
+$smallscreen: 945px;
+$tablet: 768px;
+$smallphone: 380px;
+$m-tablet: "only screen and (max-width: #{$tablet + 1})";
+$m-smallscreen: "only screen and (max-width: #{$smallscreen + 1})";
+$m-smallphone: "only screen and (max-width: #{$smallphone + 1})";

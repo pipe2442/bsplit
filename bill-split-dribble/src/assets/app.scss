@@ -1,13 +1,13 @@
-@import './styles/global.scss';
+@import "./styles/global.scss";
 
 .app {
-    display: flex;
-    flex-wrap: wrap;
-    &__menu{
-      flex-basis: 60%;
+  display: flex;
+  flex-wrap: wrap;
+  &__menu {
+    flex-basis: 55%;
+    @media #{$m-smallscreen} {
+      flex-basis: 90%;
+      margin: 0 auto;
     }
-    &__bill{
-      flex-basis: 40%;
-      background-color: yellowgreen;
-    }
+  }
 }

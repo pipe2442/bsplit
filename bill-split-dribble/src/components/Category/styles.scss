@@ -14,31 +14,6 @@
   &__bold {
     font-weight: 500;
   }
-  &__search {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    background-color: $white;
-    border-radius: 10px;
-    border: 1px solid $invisible-gray;
-    height: 40px;
-    width: 35%;
-    margin: 0;
-    .search__img {
-      width: 22px;
-      font-weight: 100;
-      margin: 0 15px;
-    }
-    .search__bar {
-      background-color: $white;
-      width: 170px;
-      height: 25px;
-      border-radius: 10px;
-      border: none;
-      margin: 0;
-      pointer-events: none;
-    }
-  }
 }
 
 .options {

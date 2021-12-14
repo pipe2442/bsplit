@@ -17,10 +17,6 @@ function Category() {
         <h2 className='category__text'>
           <span className='category__bold'>Menu</span> Category
         </h2>
-        <div className="category__search">
-          <img fill='red' src={search} alt="glass" className='search__img' />
-          <input className='search__bar' type="text" placeholder="Search for food, coffee, etc" />
-        </div>
       </div>
       <div className="options">
           <Option image={fire} text='Hot'/>
