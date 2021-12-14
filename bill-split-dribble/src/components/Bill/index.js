@@ -2,6 +2,7 @@ import { useState } from "react";
 import "./styles.scss";
 import Billcard from "../Billcard";
 import FormBill from "../FormBill";
+import FormPercentage from "../FormPercentage";
 import {
   addValues,
   findTax,
@@ -25,7 +26,6 @@ function Bill({ order, handleMenuChange }) {
     const values = [...users];
     values[index][event.target.name] = event.target.value;
     setUsers([...values]);
-    console.warn("EVENTOOO", event.target.name);
   };
 
   const total = addValues(order);
@@ -76,42 +76,11 @@ function Bill({ order, handleMenuChange }) {
           </p>
         )}
 
-        <button className="bill__submit"> Charge ${final}</button>
+        {custom === "B" && (
+          <FormPercentage users={users} handleChangeInput={handleChangeInput} customPer={customPer} final={final} />
+        )}
 
-        {custom === "B" && (
-          <h4 className="category__text order__text bill__titlediv">
-            <span className="category__bold">Custom</span> Percentage
-          </h4>
-        )}
-        <form>
-          {custom === "B" &&
-            users.map((u, i) => (
-              <input
-                className="form__input"
-                type="number"
-                key={i}
-                placeholder={`Insert user ${u.index + 1} percentage`}
-                onChange={(event) => handleChangeInput(i, event)}
-                name="percentage"
-              />
-            ))}
-        </form>
-        {custom === "B" && 
-          <h4 className="category__text order__text">
-            <span className="category__bold">Percentage</span> Values
-          </h4>
-        }
-        {custom === "B" && (
-          <ul className="bill__custom">
-            {users.map((u, i) => (
-              <li className="custom__percentage">
-                <p className="custom__percentage">
-                  User {u.index + 1} should pay {customPer(final, u.percentage)}
-                </p>
-              </li>
-            ))}
-          </ul>
-        )}
+        <button className="bill__submit"> Charge ${final}</button>
       </div>
     </>
   );

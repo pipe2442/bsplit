@@ -1,13 +1,12 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import './assets/app.scss'
 import Category from "./components/Category"
 import Menu from "./components/Menu"
 import Bill from "./components/Bill"
+import useFetch from './customHooks/useFetch'
 
 function App () {
-  const [menu, setMenu] = useState([])
   const [order, setOrder] = useState([])
-
   const handleMenuChange = (newDish, idx, add = true) => {
     let newArr = order.filter(element => element  !== newDish)
     add ? newDish.quantity += 1  : newDish.quantity -= 1 
@@ -15,15 +14,7 @@ function App () {
     setOrder([...newArr])
   }
 
-  useEffect(() => {
-    const fetchData = async() => {
-      const response = await fetch('http://localhost:8000/menu')
-      const data = await response.json()
-      setMenu(data)
-      console.log(data)
-    }
-    fetchData()
-  }, [])
+  const {data: menu, error} = useFetch("http://localhost:8000/menu")
 
   return (
     <>

@@ -28,3 +28,9 @@ export const deleteItem = (menu, index) => {
   export const dishTotal = (price, quantity) => (price * quantity).toFixed(2)
 
   export const customPer = (final, percentage) => ((final* percentage)/100).toFixed(2)
+
+  export const percentageSum = (users) => {
+    let percentages = users.map(u => Number(u.percentage))
+    const reducer = (previousValue, currentValue) => previousValue + currentValue;
+    return percentages.reduce(reducer)
+  }

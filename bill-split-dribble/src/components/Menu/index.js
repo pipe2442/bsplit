@@ -10,7 +10,7 @@ function Menu({ menu, handleMenuChange }) {
       </h4>
       <section className="menu">
         {menu.map((dish, idx) => (
-          <button className="menu__element" onClick={() => handleMenuChange(dish, idx)}>
+          <button key={idx} className="menu__element" onClick={() => handleMenuChange(dish, idx)}>
             <Foodcard dish={dish} />
           </button>
         ))}
