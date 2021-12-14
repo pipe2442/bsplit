@@ -96,11 +96,16 @@ function Bill({ order, handleMenuChange }) {
               />
             ))}
         </form>
+        {custom === "B" && 
+          <h4 className="category__text order__text">
+            <span className="category__bold">Percentage</span> Values
+          </h4>
+        }
         {custom === "B" && (
           <ul className="bill__custom">
             {users.map((u, i) => (
               <li className="custom__percentage">
-                <p className="category__text order__text">
+                <p className="custom__percentage">
                   User {u.index + 1} should pay {customPer(final, u.percentage)}
                 </p>
               </li>
