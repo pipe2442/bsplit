@@ -9,14 +9,13 @@ export const deleteItem = (menu, index) => {
   
   export const findTax = (tip, total) => (total * tip / 100).toFixed(2)
   
-  export const equalDivision = (total, tax, bill) => ((total + tax) / bill.users.length).toFixed()
+  export const equalDivision = (final, users) => (final / users).toFixed(2)
   
   export const usersPercentage = (users) => {
     let objects = [];
-    for (var x = 0; x < users.length; x++) {
+    for (var x = 0; x < users; x++) {
       let obj = {
-        [users[x]]: '',
-        name: users[x],
+        index: x,
         percentage: 0
       }
       objects.push(obj);
@@ -27,3 +26,5 @@ export const deleteItem = (menu, index) => {
   export const finalSum = (total, tax) => (Number(total) + Number(tax)).toFixed(2)
 
   export const dishTotal = (price, quantity) => (price * quantity).toFixed(2)
+
+  export const customPer = (final, percentage) => ((final* percentage)/100).toFixed(2)

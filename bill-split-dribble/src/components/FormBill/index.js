@@ -13,10 +13,10 @@ const FormBill = ({ setTip, setUsers, setCustom }) => {
   return (
     <form className="form" onSubmit={handleSubmit(onSubmit)}>
       <input className="form__input" type='number' placeholder="Insert tip amount" {...register("tip")} />
-      <input className="form__input" type='number' placeholder="Insert number of users" {...register("users")} />
+      <input className="form__input" type='text' placeholder="Insert number of users" {...register("users")} />
       <select className="form__input" {...register("custom")}>
-        <option value={false}>Equal Parts</option>
-        <option value={true}>Custom Percentage</option>
+        <option value={"A"}>Equal Parts</option>
+        <option value={"B"}>Custom Percentage</option>
       </select>
       <input className="bill__submit form__submit" type="submit" value="Divide Bill" />
     </form>

@@ -30,4 +30,19 @@
       box-shadow: 5px 5px 15px 5px rgba(160,160,160,0.3);
     }
   }
+
+  &__titlediv {
+    margin: 50px 0 25px 0;
+  }
+  &__equal {
+    font-size: 15px;
+    padding: 10px 20px;
+    text-align: center;
+  }
+  &__custom {
+    .custom__percentage {
+      list-style: none;
+      text-decoration: none;
+    }
+  }
 }

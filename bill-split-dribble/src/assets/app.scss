@@ -2,6 +2,7 @@
 
 .app {
     display: flex;
+    flex-wrap: wrap;
     &__menu{
       flex-basis: 60%;
     }
