@@ -8,16 +8,6 @@
     flex-basis: 80%;
     margin: 0 auto;
   }
-  &__menu {
-    margin: 25px 0;
-    border-bottom: dashed 1px $text-gray;
-  }
-  &__results {
-    color: $text-gray;
-    text-align: start;
-    display: flex;
-    justify-content: space-between;
-  }
   &__submit {
     font-size: 20px;
     padding: 15px 25px;

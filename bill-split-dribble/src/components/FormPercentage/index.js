@@ -1,9 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import "./styles.scss";
-import { percentageSum } from "../../logic/logic";
+import { percentageSum, usersPercentage, customPer } from "../../logic/logic";
+import { useEffect } from "react/cjs/react.development";
 
-function FormPercentage({ users, handleChangeInput, customPer, final }) {
-  const totalPercentage = percentageSum(users);
+function FormPercentage({ users, final }) {
+  const [usersArr, setUsersArr] = useState([])
+  const totalPercentage = percentageSum(usersArr);
+  const handleChangeInput = (index, event) => {
+    const values = [...usersArr];
+    values[index][event.target.name] = event.target.value;
+    setUsersArr([...values]);
+  };
+
+  useEffect(() => setUsersArr([...usersPercentage(users)]), [users])
+  
   return (
     <>
       <h4 className="category__text order__text bill__titlediv">
@@ -21,7 +31,7 @@ function FormPercentage({ users, handleChangeInput, customPer, final }) {
       )}
 
       <div className="formpercentage">
-        {users.map((u, i) => (
+        {usersArr.map((u, i) => (
           <div>
             <input
               className="form__input"

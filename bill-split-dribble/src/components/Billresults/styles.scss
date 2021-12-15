@@ -1,0 +1,8 @@
+@import "../../assets/styles/global.scss";
+
+.results {
+  color: $text-gray;
+  text-align: start;
+  display: flex;
+  justify-content: space-between;
+}
