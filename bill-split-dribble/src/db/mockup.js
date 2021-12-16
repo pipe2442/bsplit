@@ -1,5 +1,4 @@
-{
-  "menu": [
+export const menu = [
     {
       "quantity": 0,
       "name": "Big Mac",
@@ -56,21 +55,4 @@
       "id": 8,
       "img": "https://i.ibb.co/ZVWXKN9/spicychickendeluxe.png"
     }
-  ],
-  "orders": [
-    {
-      "quantity": 0,
-      "name": "Big Mac",
-      "price": 5.99,
-      "id": 1,
-      "img": "https://i.ibb.co/vZk4rNp/bigmac.png"
-    },
-    {
-      "quantity": 0,
-      "name": "Combo 1",
-      "price": 10.99,
-      "id": 2,
-      "img": "https://i.ibb.co/b50wYp8/bigmac-combo.png"
-    }
   ]
-}
